@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.aniadido-float {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2.1rem;
+  color: #0f0e0e;
+  text-shadow: 0 2px 8px rgba(115, 39, 39, 0.533), 0 1px 0 #580202;
+  background: none;
+  pointer-events: none;
+  z-index: 10010;
+  opacity: 50;
+  animation: aniadidoPop 2.1s cubic-bezier(.7,-0.2,.7,1.2) forwards;
+}
+
+@keyframes aniadidoPop {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.7); }
+  10% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+  60% { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(0.7); }
+}

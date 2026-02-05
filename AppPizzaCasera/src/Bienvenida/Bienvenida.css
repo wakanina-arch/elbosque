@@ -1,0 +1,12 @@
+.bienvenida-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #2a2301;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/1. Bienvenida/inicio.JPG");
+  font-family: 'Amatic SC', cursive;
+}

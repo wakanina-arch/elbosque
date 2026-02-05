@@ -1,0 +1,28 @@
+/* Botón de flecha reutilizable */
+.arrow-nav-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+.arrow-nav-btn.back {
+  position: absolute;
+  top: 16px;
+  left: 56px;
+  z-index: 1000;
+}
+.arrow-nav-btn.forward {
+  position: absolute;
+  top: 16px;
+  right: 56px;
+  z-index: 1000;
+}
+.arrow-nav-btn:hover {
+  color: #b71c1c;
+}

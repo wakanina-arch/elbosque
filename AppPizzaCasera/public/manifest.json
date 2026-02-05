@@ -1,0 +1,21 @@
+{
+  "short_name": "elbosque",
+  "name": "elbosque",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d32f2f",
+  "description": "Pide tu pizza casera favorita a domicilio desde tu móvil o tablet."
+}

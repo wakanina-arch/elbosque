@@ -1,0 +1,121 @@
+.pizzas-selector-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: radial-gradient(ellipse at 60% 40%, #232323 60%, #111 100%);
+  /* Efecto humo sutil */
+  position: relative;
+  overflow: hidden;
+}
+
+.pizzas-titulo {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #e53935;
+}
+
+.pizzas-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.pizzas-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pizza-card {
+  --pizza-card-width: 360px;
+  --pizza-card-height: 190deg;
+  background: rgba(20, 20, 20, 0.98);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px #000a, 0 1.5px 0.5px #fff1 inset;
+  padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: var(--pizza-card-width);
+  min-width: var(--pizza-card-width);
+  max-width: var(--pizza-card-width);
+  height: var(--pizza-card-height);
+  min-height: var(--pizza-card-height);
+  max-height: var(--pizza-card-height);
+  border: 1.5px solid #333;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.pizza-card:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 8px 32px #000c, 0 2px 8px #e5393533;
+  border: 1.5px solid #0e0d0d;
+}
+.pizza-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ffe60033;
+  box-shadow: 0 2px 8px #0008;
+  margin-bottom: 0;
+}
+.pizza-info {
+  text-align: left;
+  color: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.15rem;
+}
+.pizza-desc {
+  font-size: 0.85rem;
+  color: #ffe600;
+  margin: 0.1rem 0 0.4rem 0;
+  white-space: pre-line;
+  text-shadow: 0 1px 6px #000b;
+}
+.pizza-btns {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.btn-roja {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.18rem 0.5rem;
+  font-weight: bold;
+  font-size: 0.65rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-width: 90px;
+  max-width: 120px;
+  white-space: nowrap;
+}
+.btn-roja:hover {
+  background: #b71c1c;
+}
+.btn-ordenar {
+  background: #43a047;
+}
+.btn-ordenar:hover {
+  background: #1b5e20;
+}

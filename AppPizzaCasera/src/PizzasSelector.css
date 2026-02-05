@@ -1,0 +1,130 @@
+.pizza-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pizza-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.7rem;
+}
+
+.btn-roja {
+  background: linear-gradient(90deg, #e53935 60%, #b71c1c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.25rem 0.65rem;
+  font-weight: bold;
+  font-size: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0005;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-roja:hover {
+  background: linear-gradient(90deg, #b71c1c 60%, #e53935 100%);
+  transform: scale(1.07);
+}
+.btn-ordenar {
+  color: #fff;
+}
+.pizzas-selector-container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 2vw 4vw;
+  box-sizing: border-box;
+  /* Fondo negro jaspeado tipo carbón/piedra */
+  background: repeating-linear-gradient(135deg, #181818 0 20px, #232323 20px 40px, #181818 40px 60px, #232323 60px 80px);
+}
+
+.pizzas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pizza-card {
+  background: #181818;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px #0008;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  min-width: 0;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.pizza-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-right: 1.2rem;
+  border: 3px solid #ffe600;
+  background: #232323;
+}
+.pizza-desc {
+  font-size: 1rem;
+  color: #eee;
+  background: none;
+  border-radius: 0.7rem;
+  padding: 0;
+  margin-top: 0.2rem;
+  white-space: pre-line;
+}
+.pizza-card h3 {
+  color: #ffe600;
+  margin: 0 0 0.3rem 0;
+  font-size: 1.25rem;
+}
+
+.ingredientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+.ingrediente-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px #0001;
+  padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.ingrediente-card:hover {
+  box-shadow: 0 4px 16px #43a04755;
+  transform: scale(1.04);
+}
+.ingrediente-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  border: 2px solid #43a047;
+}
+.ingrediente-nombre {
+  font-weight: bold;
+  color: #43a047;
+  margin-bottom: 0.2rem;
+}
+.ingrediente-desc {
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+}
