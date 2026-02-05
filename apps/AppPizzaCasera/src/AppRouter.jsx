@@ -108,7 +108,12 @@ function AppRouter() {
       justifyContent: 'center',
       alignItems: 'center',
     }}>
-      <div style={{
+      <header style={{ width: '100%', maxWidth: 420, margin: '0 auto', padding: '1rem 0 0.5rem 0' }}>
+        <h1 style={{ position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
+          App Pizza Casera - elbosque
+        </h1>
+      </header>
+      <main style={{
         flex: 1,
         width: '100%',
         display: 'flex',
@@ -126,7 +131,7 @@ function AppRouter() {
             <button onClick={siguiente}>Siguiente</button>
           )}
         </div>
-      </div>
+      </main>
       {/* Barra de navegación inferior */}
       <PerfilModal
         open={perfilAbierto}
@@ -135,7 +140,7 @@ function AppRouter() {
         onLogout={handlePerfilLogout}
         userData={userData}
       />
-      <nav style={{
+      <nav aria-label="Navegación principal" style={{
         position: 'fixed',
         left: 0,
         right: 0,
