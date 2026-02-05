@@ -1,0 +1,10 @@
+# Ignorar dependencias y archivos temporales
+node_modules/
+dist/
+build/
+.env
+.DS_Store
+*.log
+# Ignorar dependencias de paquetes
+apps/*/node_modules/
+packages/*/node_modules/
