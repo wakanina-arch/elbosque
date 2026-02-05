@@ -82,7 +82,7 @@ export default function PizzasSelector() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '16px 0' }}>
         <ArrowNavButton direction="back" to={-1} label="Atrás" />
         <h2 style={{ textAlign: 'center', margin: '0 8px', flex: 1 }}>Elige tu pizza favorita</h2>
-        <ArrowNavButton direction="forward" to="/ingredientes" label="Siguiente" />
+        {/* <ArrowNavButton direction="forward" to="/ingredientes" label="Siguiente" /> */}
       </div>
       <div className="pizzas-grid">
         <div className="pizzas-columna">
@@ -93,7 +93,7 @@ export default function PizzasSelector() {
                 <h3>{pizza.nombre}</h3>
                 <pre className="pizza-desc">{pizza.descripcion}</pre>
                 <div className="pizza-btns">
-                  <button className="btn-roja" onClick={() => navigate('/ingredientes')}>Construye tu Pizza</button>
+                  {/* <button className="btn-roja" onClick={() => navigate('/ingredientes')}>Construye tu Pizza</button> */}
                   <button className="btn-roja btn-ordenar">Ordena tu Pizza</button>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function PizzasSelector() {
                 <h3>{pizza.nombre}</h3>
                 <pre className="pizza-desc">{pizza.descripcion}</pre>
                 <div className="pizza-btns">
-                  <button className="btn-roja" onClick={() => navigate('/ingredientes')}>Construye tu Pizza</button>
+                  {/* <button className="btn-roja" onClick={() => navigate('/ingredientes')}>Construye tu Pizza</button> */}
                   <button className="btn-roja btn-ordenar">Ordena tu Pizza</button>
                 </div>
               </div>
