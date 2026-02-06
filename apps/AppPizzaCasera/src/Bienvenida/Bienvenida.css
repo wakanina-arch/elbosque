@@ -3,21 +3,182 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
-  background: #2a2301 !important;
+  background: linear-gradient(135deg, #2a2301 0%, #3d3005 100%) !important;
   background-image: none !important;
+  background-attachment: fixed;
   font-family: 'Amatic SC', cursive;
   overflow: hidden;
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 
-.bienvenida-container img {
+.bienvenida-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bienvenida-imagen {
   max-width: 100%;
-  max-height: 100vh;
+  max-height: 35vh;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
+  margin-bottom: 10px;
+  animation: slideInDown 0.8s ease-out;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bienvenida-titulo {
+  font-size: 2.8rem;
+  color: #fff8dc;
+  text-align: center;
+  margin: 5px 0 15px 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5),
+               -1px -1px 2px rgba(255, 255, 255, 0.1);
+  animation: fadeInDown 1s ease-out 0.2s both;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bienvenida-subtitulo {
+  font-size: 1.5rem;
+  color: #ffd699;
+  text-align: center;
+  margin: 0 0 30px 0;
+  animation: fadeIn 1s ease-out 0.4s both;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bienvenida-boton {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  font-size: 1.1rem;
+  font-family: 'Amatic SC', cursive;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+  animation: fadeInUp 1s ease-out 0.6s both;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.bienvenida-boton:hover {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.6);
+}
+
+.bienvenida-boton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(211, 47, 47, 0.4);
+}
+
+/* Responsive para tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .bienvenida-titulo {
+    font-size: 2.5rem;
+  }
+
+  .bienvenida-subtitulo {
+    font-size: 1.2rem;
+  }
+
+  .bienvenida-boton {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+
+  .bienvenida-imagen {
+    max-height: 45vh;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .bienvenida-container {
+    padding: 15px;
+  }
+
+  .bienvenida-titulo {
+    font-size: 2rem;
+    margin: 15px 0 8px 0;
+  }
+
+  .bienvenida-subtitulo {
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+  }
+
+  .bienvenida-boton {
+    padding: 12px 25px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .bienvenida-imagen {
+    max-height: 40vh;
+    margin-bottom: 15px;
+  }
+
+  .bienvenida-content {
+    max-width: 100%;
+  }
 }

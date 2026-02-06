@@ -214,6 +214,7 @@ button:focus, button:focus-visible {
 .read-the-docs {
     color:#888
 }
+/*pizzas*/
 
 .pizzas-selector-container {
     background: radial-gradient(at 60% 40%, #232323 60%, #111 100%);
@@ -375,6 +376,7 @@ button:focus, button:focus-visible {
 .arrow-nav-btn:hover {
     color:#b71c1c
 }
+/*ingredientes*/
 
 .ingredientes-pantalla-container {
     background: linear-gradient(#fffbe6 60%, #e3f2fd 100%);
@@ -570,6 +572,8 @@ button:focus, button:focus-visible {
     }
 }
 
+/*ensalada*/
+
 .ensaladas-container {
     scrollbar-width: thin;
     scrollbar-color: #ffb347 #222;
@@ -643,6 +647,8 @@ button:focus, button:focus-visible {
     box-shadow:0 2px 8px #0002
 }
 
+/*complemento*/
+
 .complementos-container {
     scrollbar-width: thin;
     scrollbar-color: #ffb347 #222;
@@ -693,6 +699,7 @@ button:focus, button:focus-visible {
     box-shadow:0 2px 8px #f6f1f166
 }
 
+/*bebidas*/
 .bebidas-container {
     scrollbar-width: thin;
     scrollbar-color: #ffb347 #222;

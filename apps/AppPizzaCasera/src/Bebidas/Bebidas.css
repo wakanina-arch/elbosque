@@ -1,4 +1,4 @@
-.bebidas-container{
+.bebidas-container {
   padding: 2rem 0.5rem;
   background: #0f0e0e;
   display: flex;
@@ -10,6 +10,7 @@
   scrollbar-width: thin;
   scrollbar-color: #ffb347 #222;
 }
+
 .bebidas-frame {
   display: flex;
   flex-direction: column;
@@ -31,7 +32,7 @@
 }
 
 .bebidas-frame span {
-  color: #0e0d0d;
+  color: #fff;
   margin-top: 0.5rem;
   font-size: 1.1rem;
   font-weight: 600;

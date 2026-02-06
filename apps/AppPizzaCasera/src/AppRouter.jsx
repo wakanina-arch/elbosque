@@ -47,6 +47,8 @@ function AppRouter() {
       setShowUserForm(false);
       setUserData(datos);
     }} />;
+  } else if (idPantalla === "bienvenida") {
+    componenteActual = <Bienvenida siguiente={siguiente} />;
   } else if (idPantalla === "pizzas") {
     componenteActual = <Pizzas agregarAlCarrito={producto => setCarrito([...carrito, producto])} />;
   } else if (idPantalla === "ensaladas") {
@@ -114,14 +116,16 @@ function AppRouter() {
         minHeight: 'calc(100vh - 70px)',
       }}>
         {componenteActual}
-        <div style={{ display: "flex", justifyContent: "center", margin: "2rem" }}>
-          {indice > 0 && (
-            <button onClick={anterior} style={{ marginRight: "1rem" }}>Anterior</button>
-          )}
-          {indice < pantallas.length - 1 && (
-            <button onClick={siguiente}>Siguiente</button>
-          )}
-        </div>
+        {idPantalla !== "bienvenida" && (
+          <div style={{ display: "flex", justifyContent: "center", margin: "2rem" }}>
+            {indice > 0 && (
+              <button onClick={anterior} style={{ marginRight: "1rem" }}>Anterior</button>
+            )}
+            {indice < pantallas.length - 1 && (
+              <button onClick={siguiente}>Siguiente</button>
+            )}
+          </div>
+        )}
       </div>
       {/* Barra de navegación inferior */}
       <PerfilModal
