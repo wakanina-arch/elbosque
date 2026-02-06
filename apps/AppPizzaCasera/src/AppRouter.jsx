@@ -51,10 +51,6 @@ function AppRouter() {
     componenteActual = <Pizzas agregarAlCarrito={producto => setCarrito([...carrito, producto])} />;
   } else if (idPantalla === "ensaladas") {
     componenteActual = <Ensaladas agregarAlCarrito={producto => setCarrito([...carrito, producto])} />;
-  } else if (idPantalla === "complementos") {
-    componenteActual = <Complementos agregarAlCarrito={producto => setCarrito([...carrito, producto])} />;
-  } else if (idPantalla === "bebidas") {
-    componenteActual = <Bebidas agregarAlCarrito={producto => setCarrito([...carrito, producto])} />;
   } else if (idPantalla === "finalizacion") {
     componenteActual = <Finalizacion carrito={carrito} />;
   } else {
@@ -108,12 +104,7 @@ function AppRouter() {
       justifyContent: 'center',
       alignItems: 'center',
     }}>
-      <header style={{ width: '100%', maxWidth: 420, margin: '0 auto', padding: '1rem 0 0.5rem 0' }}>
-        <h1 style={{ position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
-          App Pizza Casera - elbosque
-        </h1>
-      </header>
-      <main style={{
+      <div style={{
         flex: 1,
         width: '100%',
         display: 'flex',
@@ -131,7 +122,7 @@ function AppRouter() {
             <button onClick={siguiente}>Siguiente</button>
           )}
         </div>
-      </main>
+      </div>
       {/* Barra de navegación inferior */}
       <PerfilModal
         open={perfilAbierto}
@@ -140,7 +131,7 @@ function AppRouter() {
         onLogout={handlePerfilLogout}
         userData={userData}
       />
-      <nav aria-label="Navegación principal" style={{
+      <nav style={{
         position: 'fixed',
         left: 0,
         right: 0,

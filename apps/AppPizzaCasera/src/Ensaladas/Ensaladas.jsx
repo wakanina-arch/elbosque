@@ -1,6 +1,12 @@
 
-
-import { restarPrecio } from '../utils/precioUtils';
+// Función para restar $1.00 a un string de precio tipo "$7.99"
+function restarUnDolar(precio) {
+  if (!precio) return '';
+  const num = parseFloat(precio.replace(/[^\d.]/g, ''));
+  if (isNaN(num)) return precio;
+  const nuevo = (num - 1).toFixed(2);
+  return `$${nuevo}`;
+}
 
 import React, { useState } from "react";
 import "./Ensaladas.css";
@@ -213,7 +219,7 @@ export default function Ensaladas({ agregarAlCarrito }) {
                   // Añadir la ensalada seleccionada al carrito
                   const precio = tamano === 'grande'
                     ? parseFloat(ensaladas[seleccionada].valor.replace(/[^\d.]/g, ''))
-                    : restarPrecio(ensaladas[seleccionada].valor, 1);
+                    : parseFloat(restarUnDolar(ensaladas[seleccionada].valor).replace(/[^\d.]/g, ''));
                   agregarAlCarrito({
                     nombre: ensaladas[seleccionada].nombre + (tamano === 'grande' ? ' grande' : ' mediana'),
                     precio,
@@ -221,7 +227,7 @@ export default function Ensaladas({ agregarAlCarrito }) {
                   });
                 }}
               >
-                Añadir 1 por {tamano === 'grande' ? ensaladas[seleccionada].valor : `$${restarPrecio(ensaladas[seleccionada].valor, 1).toFixed(2)}`}
+                Añadir 1 por {tamano === 'grande' ? ensaladas[seleccionada].valor : restarUnDolar(ensaladas[seleccionada].valor)}
               </button>
             </div>
           </div>

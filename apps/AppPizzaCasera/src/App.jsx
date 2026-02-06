@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Entrada from './Entrada';
 import PizzasSelector from './PizzasSelector';
 import Salida from './Salida';
+import Ingredientes from './Ingredientes';
 import AppRouter from './AppRouter';
 import './App.css';
 

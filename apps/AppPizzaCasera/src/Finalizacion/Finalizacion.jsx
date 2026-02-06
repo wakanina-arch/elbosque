@@ -1,30 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./Finalizacion.css";
 import PaymentForm from "./PaymentForm";
 
 
-
-
-// Tabla de IVA por país (puedes ampliar según necesidad)
-const IVA_PAISES = {
-  Ecuador: 0.15,
-  Colombia: 0.19,
-  México: 0.16,
-  Chile: 0.19,
-  Argentina: 0.21,
-  Perú: 0.18,
-  España: 0.10, // alimentos preparados
-  Otro: 0.15
-};
-const ENVIO = 2.5;
-
 export default function Finalizacion({ carrito }) {
-  // Estado para país seleccionado
-  const [pais, setPais] = useState('Ecuador');
   // El subtotal es la suma de todos los productos del carrito
   const subtotal = carrito.reduce((acc, prod) => acc + (prod.precio || 0), 0);
-  const IVA_PORCENTAJE = IVA_PAISES[pais] || IVA_PAISES['Otro'];
-  const impuestos = subtotal * IVA_PORCENTAJE;
   const pagoRef = useRef(null);
 
   const scrollToPago = () => {
@@ -36,17 +17,6 @@ export default function Finalizacion({ carrito }) {
   return (
     <div className="finalizacion-container">
       <h2>Finaliza tu Pedido</h2>
-      <div style={{ marginBottom: 16 }}>
-        <label style={{ fontWeight: 600, marginRight: 8 }}>País:</label>
-        <select value={pais} onChange={e => setPais(e.target.value)} style={{ fontSize: '1rem', padding: '2px 8px', borderRadius: 6 }}>
-          {Object.keys(IVA_PAISES).map(p => (
-            <option key={p} value={p}>{p}</option>
-          ))}
-        </select>
-        <span style={{ marginLeft: 10, color: '#888', fontSize: '0.95rem' }}>
-          IVA: {(IVA_PORCENTAJE * 100).toFixed(0)}%
-        </span>
-      </div>
       <div className="finalizacion-superior">
         <div className="container">
           <div className="card cart">
@@ -91,9 +61,9 @@ export default function Finalizacion({ carrito }) {
                     <span>Subtotal:</span>
                     <span>${subtotal.toFixed(2)}</span>
                     <span>Envío:</span>
-                    <span>${ENVIO.toFixed(2)}</span>
-                    <span>Impuestos (IVA {Math.round(IVA_PORCENTAJE*100)}%):</span>
-                    <span>${impuestos.toFixed(2)}</span>
+                    <span>$10.00</span>
+                    <span>Impuestos:</span>
+                    <span>$30.40</span>
                   </div>
                 </div>
               </div>
@@ -101,7 +71,7 @@ export default function Finalizacion({ carrito }) {
           </div>
           <div className="card checkout">
             <div className="footer">
-              <label className="price">${(subtotal + ENVIO + impuestos).toFixed(2)}</label>
+              <label className="price">${(subtotal + 10 + 30.4).toFixed(2)}</label>
               <button className="checkout-btn" onClick={scrollToPago}>Finalizar Pedido</button>
             </div>
           </div>

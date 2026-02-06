@@ -12,7 +12,12 @@ import pichos from '../assets/4. Complementos/Pinchos morunos.png';
 import pollo from '../assets/4. Complementos/Pollo broster.png';
 import tabla from '../assets/4. Complementos/Tabla flamenca.png';
 
-import { restarPrecio } from '../utils/precioUtils';
+function restarUnDolar(valor) {
+  // Extrae el número del string, resta 1 y devuelve el nuevo string con formato de precio
+  const numero = parseFloat(valor.replace(/[^\d.]/g, ''));
+  const nuevoNumero = (numero - 1).toFixed(2);
+  return `$${nuevoNumero}`;
+}
 
 export default function Complementos({ agregarAlCarrito }) {
   const [aniadido, setAniadido] = useState(false);
@@ -206,10 +211,10 @@ export default function Complementos({ agregarAlCarrito }) {
                 onClick={() => {
                   setAniadido(true);
                   setTimeout(() => setAniadido(false), 1100);
-                  // Añadir el complemento seleccionado al carrito
+                  // Añadir la ensalada seleccionada al carrito
                   const precio = tamano === 'grande'
                     ? parseFloat(complementos[seleccionada].valor.replace(/[^\d.]/g, ''))
-                    : restarPrecio(complementos[seleccionada].valor, 1);
+                    : parseFloat(restarUnDolar(complementos[seleccionada].valor).replace(/[^\d.]/g, ''));
                   agregarAlCarrito({
                     nombre: complementos[seleccionada].nombre + (tamano === 'grande' ? ' grande' : ' mediana'),
                     precio,
@@ -217,7 +222,7 @@ export default function Complementos({ agregarAlCarrito }) {
                   });
                 }}
               >
-                Añadir 1 por {tamano === 'grande' ? complementos[seleccionada].valor : `$${restarPrecio(complementos[seleccionada].valor, 1).toFixed(2)}`}
+                Añadir 1 por {tamano === 'grande' ? complementos[seleccionada].valor : restarUnDolar(complementos[seleccionada].valor)}
               </button>
             </div>
           </div>

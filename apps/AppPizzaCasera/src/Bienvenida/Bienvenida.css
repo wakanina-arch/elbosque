@@ -1,37 +1,23 @@
-.bienvenida-text {
-  margin-top: 55vh;
-  margin-bottom: 11rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .bienvenida-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding-top: 30vh;
+  justify-content: center;
   min-height: 100vh;
-  padding: 2.5rem 1.5rem;
-  box-sizing: border-box;
-  background: #2a2301;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-image: url("../assets/1. Bienvenida/Pizza Casera.jpg");
+  width: 100%;
+  background: #2a2301 !important;
+  background-image: none !important;
   font-family: 'Amatic SC', cursive;
-}
-.bienvenida-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  /* Ajusta la opacidad */
-  z-index: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-.bienvenida-container>* {
-  position: relative;
-  z-index: 1;
+.bienvenida-container img {
+  max-width: 100%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }

@@ -1,5 +1,11 @@
-
-import { restarPrecio } from '../utils/precioUtils';
+// Función para restar $2.00 a un string de precio tipo "$12.99"
+function restarDosDolares(precio) {
+  if (!precio) return '';
+  const num = parseFloat(precio.replace(/[^\d.]/g, ''));
+  if (isNaN(num)) return precio;
+  const nuevo = (num - 2).toFixed(2);
+  return `$${nuevo}`;
+}
 
 import React, { useState } from "react";
 import "./Pizzas.css";
@@ -205,7 +211,7 @@ function Pizzas({ agregarAlCarrito }) {
                           // Añadir la pizza seleccionada al carrito
                           const precio = tamano === 'grande'
                             ? parseFloat(pizzas[seleccionada].valor.replace(/[^\d.]/g, ''))
-                            : restarPrecio(pizzas[seleccionada].valor, 2);
+                            : parseFloat(restarDosDolares(pizzas[seleccionada].valor).replace(/[^\d.]/g, ''));
                           agregarAlCarrito({
                             nombre: pizzas[seleccionada].nombre + (tamano === 'grande' ? ' grande' : ' mediana'),
                             precio,
@@ -213,7 +219,7 @@ function Pizzas({ agregarAlCarrito }) {
                           });
                         }}
                       >
-                        Añadir 1 por {tamano === 'grande' ? pizzas[seleccionada].valor : `$${restarPrecio(pizzas[seleccionada].valor, 2).toFixed(2)}`}
+                        Añadir 1 por {tamano === 'grande' ? pizzas[seleccionada].valor : restarDosDolares(pizzas[seleccionada].valor)}
                       </button>
                       {/* Aquí irá el selector de cantidad y el botón flotante en el siguiente paso */}
                     </div>
