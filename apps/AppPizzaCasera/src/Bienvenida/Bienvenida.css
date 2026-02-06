@@ -12,6 +12,8 @@
   overflow: hidden;
   padding: 10px;
   margin: 0;
+  min-height: 100%;
+  flex: 1;
 }
 
 .bienvenida-content {
@@ -21,6 +23,7 @@
   justify-content: center;
   max-width: 600px;
   width: 100%;
+  height: 100%;
   animation: fadeInUp 1s ease-out;
 }
 
