@@ -1,8 +1,17 @@
+.bienvenida-text {
+  margin-top: 55vh;
+  margin-bottom: 11rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .bienvenida-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-top: 30vh;
   min-height: 100vh;
   padding: 2.5rem 1.5rem;
   box-sizing: border-box;
