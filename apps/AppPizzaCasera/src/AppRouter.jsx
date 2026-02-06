@@ -98,13 +98,13 @@ function AppRouter() {
 
   return (
     <div style={{
-      minHeight: '100vh',
+      height: 'calc(100vh - 65px)',
       position: 'relative',
-      paddingBottom: 70,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      paddingBottom: 0,
     }}>
       <div style={{
         flex: 1,
@@ -113,7 +113,7 @@ function AppRouter() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: 'calc(100vh - 70px)',
+        height: '100%',
       }}>
         {componenteActual}
         {idPantalla !== "bienvenida" && (

@@ -485,9 +485,9 @@ button:focus, button:focus-visible {
     scrollbar-color: #ffb347 #222;
     background: #0f0e0e;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1.5rem;
     max-height: 350px;
-    padding: 2rem .5rem;
+    padding: 1rem 0.5rem;
     display: flex;
     overflow:auto
 }
@@ -579,9 +579,9 @@ button:focus, button:focus-visible {
     scrollbar-color: #ffb347 #222;
     background: #0f0e0e;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1.5rem;
     max-height: 350px;
-    padding: 2rem .5rem;
+    padding: 1rem 0.5rem;
     display: flex;
     overflow:auto
 }
@@ -628,9 +628,9 @@ button:focus, button:focus-visible {
     scrollbar-width: thin;
     scrollbar-color: #ffb347 #222;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 100vw;
-    padding: 2rem .5rem;
+    padding: 1rem 0.5rem;
     display: flex;
     overflow-x:auto
 }
@@ -654,9 +654,9 @@ button:focus, button:focus-visible {
     scrollbar-color: #ffb347 #222;
     background: #0f0e0e;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1.5rem;
     max-height: 350px;
-    padding: 2rem .5rem;
+    padding: 1rem 0.5rem;
     display: flex;
     overflow:auto
 }
@@ -705,9 +705,9 @@ button:focus, button:focus-visible {
     scrollbar-color: #ffb347 #222;
     background: #0f0e0e;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1.5rem;
     max-height: 350px;
-    padding: 2rem .5rem;
+    padding: 1rem 0.5rem;
     display: flex;
     overflow:auto
 }
@@ -870,18 +870,22 @@ button:focus, button:focus-visible {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
 }
 
 .finalizacion-superior {
         width: 100%;
         max-width: 800px;
-        padding: 2rem 2rem 1rem 2rem;
+        padding: 1rem 1rem 0.5rem 1rem;
         box-sizing: border-box;
 }
 .finalizacion-inferior {
         width: 100%;
         max-width: 800px;
-        padding: 2rem 2rem 1rem 2rem;
+        padding: 0.5rem 1rem 1rem 1rem;
         box-sizing: border-box;
 }
 

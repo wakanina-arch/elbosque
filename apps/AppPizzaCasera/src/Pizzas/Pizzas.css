@@ -1,14 +1,20 @@
 .pizzas-container {
-  padding: 2rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   background: #0f0e0e;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1.5rem;
   overflow-x: auto;
-  overflow-y: auto;
+  overflow-y: hidden;
   max-height: 350px;
+  width: 100%;
   scrollbar-width: thin;
   scrollbar-color: #ffb347 #222;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Efecto de carrete fotográfico */
+  position: relative;
+  perspective: 1000px;
 }
 
 .pizza-frame {
@@ -21,7 +27,7 @@
   background: #090909;
   transition: border 0.2s, box-shadow 0.2s;
   cursor: pointer;
-  min-width: 200px;
+  min-width: 240px;
   min-height: 240px;
   margin-bottom: 0.5rem;
 }
