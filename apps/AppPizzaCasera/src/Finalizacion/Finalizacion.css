@@ -376,7 +376,7 @@ button:focus, button:focus-visible {
     color:#b71c1c
 }
 
-.ingredientes-pantalla-container {
+/*.ingredientes-pantalla-container {
     background: linear-gradient(#fffbe6 60%, #e3f2fd 100%);
     flex-direction: column;
     justify-content: flex-start;
