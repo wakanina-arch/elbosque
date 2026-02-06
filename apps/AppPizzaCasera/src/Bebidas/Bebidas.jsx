@@ -1,7 +1,7 @@
 import React from 'react';
-import MenuItem from '../components/MenuItem';
+import MenuFilmReel from '../components/MenuFilmReel';
 import menuData from '../data/menuData.json';
 
 export default function Bebidas() {
-  return <MenuItem items={menuData.bebidas} titulo="Elige tu Bebida" />;
+  return <MenuFilmReel items={menuData.bebidas} titulo="🥤 Elige tu Bebida" />;
 }

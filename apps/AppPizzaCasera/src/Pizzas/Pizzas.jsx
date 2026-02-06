@@ -1,7 +1,7 @@
 import React from 'react';
-import MenuItem from '../components/MenuItem';
+import MenuFilmReel from '../components/MenuFilmReel';
 import menuData from '../data/menuData.json';
 
 export default function Pizzas() {
-  return <MenuItem items={menuData.pizzas} titulo="Elige tu Pizza" />;
+  return <MenuFilmReel items={menuData.pizzas} titulo="🍕 Elige tu Pizza" />;
 }
