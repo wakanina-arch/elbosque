@@ -1,5 +1,5 @@
 import React from 'react';
-import ingredienteImg from '../imagenes/Pizza-Masa/IMG_0709.JPG';
+const ingredienteImg = '/imagenes/Pizza-Masa/IMG_0709.JPG';
 import './PizzasSelector.css';
 
 const ingredientes = Array.from({ length: 22 }, (_, i) => ({

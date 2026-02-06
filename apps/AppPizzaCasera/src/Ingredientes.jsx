@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './Ingredientes.css';
-import ingredienteImg from '../imagenes/Pizza-Masa/IMG_0709.JPG';
+const ingredienteImg = '/imagenes/Pizza-Masa/IMG_0709.JPG';
 import ArrowNavButton from './ArrowNavButton';
 
 // Array de 22 ingredientes autónomos
