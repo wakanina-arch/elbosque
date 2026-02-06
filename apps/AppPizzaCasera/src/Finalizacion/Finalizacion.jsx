@@ -1,21 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import "./Finalizacion.css";
 import PaymentForm from "./PaymentForm";
+import { CarritoContext } from "../context/CarritoContext";
+import { IVA_PAISES } from "../utils/helpers";
 
-// Tabla de IVA por país (puedes ampliar según necesidad)
-const IVA_PAISES = {
-  Ecuador: 0.15,
-  Colombia: 0.19,
-  México: 0.16,
-  Chile: 0.19,
-  Argentina: 0.21,
-  Perú: 0.18,
-  España: 0.10, // alimentos preparados
-  Otro: 0.15
-};
 const ENVIO = 2.5;
 
-export default function Finalizacion({ carrito }) {
+export default function Finalizacion() {
+  const { carrito } = useContext(CarritoContext);
   // Estado para país seleccionado
   const [pais, setPais] = useState('Ecuador');
   // El subtotal es la suma de todos los productos del carrito

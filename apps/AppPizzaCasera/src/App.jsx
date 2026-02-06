@@ -1,15 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Entrada from './Entrada';
-import PizzasSelector from './PizzasSelector';
-import Salida from './Salida';
-import Ingredientes from './Ingredientes';
+import { CarritoProvider } from './context/CarritoContext';
 import AppRouter from './AppRouter';
 import './App.css';
 
 function App() {
   return (
-    <AppRouter />
+    <CarritoProvider>
+      <AppRouter />
+    </CarritoProvider>
   );
 }
 

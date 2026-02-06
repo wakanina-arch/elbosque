@@ -1,0 +1,214 @@
+{
+  "pizzas": [
+    {
+      "nombre": "Carbonara",
+      "img": "/src/assets/2. pizzas/Carbonara.jpg",
+      "valor": "$12.99",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Carbonara pizza description."
+    },
+    {
+      "nombre": "Champiñones",
+      "img": "/src/assets/2. pizzas/Champiñones.jpg",
+      "valor": "$11.99",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Champiñones pizza description."
+    },
+    {
+      "nombre": "Cuatro Quesos",
+      "img": "/src/assets/2. pizzas/Cuatro Quesos.jpg",
+      "valor": "$13.99",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Cuatro Quesos pizza description."
+    },
+    {
+      "nombre": "Hawaiana",
+      "img": "/src/assets/2. pizzas/Hawaiana.jpg",
+      "valor": "$12.49",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Hawaiana pizza description."
+    },
+    {
+      "nombre": "Margherita",
+      "img": "/src/assets/2. pizzas/Margherita.jpg",
+      "valor": "$10.99",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Margherita pizza description."
+    },
+    {
+      "nombre": "Marinera",
+      "img": "/src/assets/2. pizzas/Marinera.jpg",
+      "valor": "$13.49",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Marinera pizza description."
+    },
+    {
+      "nombre": "Napolitana",
+      "img": "/src/assets/2. pizzas/Napolitana.jpg",
+      "valor": "$11.49",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Napolitana pizza description."
+    },
+    {
+      "nombre": "Pepperoni",
+      "img": "/src/assets/2. pizzas/Pepperoni.jpg",
+      "valor": "$12.49",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Pepperoni pizza description."
+    },
+    {
+      "nombre": "Rústica",
+      "img": "/src/assets/2. pizzas/Rústica.jpg",
+      "valor": "$13.99",
+      "caracteristicas": "Lorem ipsum dolor sit amet, Rústica pizza description."
+    }
+  ],
+  "ensaladas": [
+    {
+      "nombre": "César",
+      "img": "/src/assets/3. Ensaladas/cesar.jpg",
+      "valor": "$7.99",
+      "caracteristicas": "Lechuga, pollo, parmesano, crutones y aderezo César."
+    },
+    {
+      "nombre": "Griega",
+      "img": "/src/assets/3. Ensaladas/griega.jpg",
+      "valor": "$8.49",
+      "caracteristicas": "Lechuga, tomate, pepino, queso feta y aceitunas negras."
+    },
+    {
+      "nombre": "Caprese",
+      "img": "/src/assets/3. Ensaladas/caprese.jpg",
+      "valor": "$7.49",
+      "caracteristicas": "Tomate, mozzarella, albahaca y aceite de oliva."
+    },
+    {
+      "nombre": "Coleslaw",
+      "img": "/src/assets/3. Ensaladas/coleslaw.jpg",
+      "valor": "$6.99",
+      "caracteristicas": "Repollo, zanahoria, huevo y mayonesa."
+    },
+    {
+      "nombre": "Rusa",
+      "img": "/src/assets/3. Ensaladas/rusa.jpg",
+      "valor": "$6.99",
+      "caracteristicas": "Patata, zanahoria, guisantes y mayonesa."
+    },
+    {
+      "nombre": "Tabule Vegetal",
+      "img": "/src/assets/3. Ensaladas/tabule.jpg",
+      "valor": "$7.39",
+      "caracteristicas": "Cuscús, tomate, pepino, perejil y limón."
+    }
+  ],
+  "complementos": [
+    {
+      "nombre": "Alitas de Pollo",
+      "img": "/src/assets/4. Complementos/alitas1.jpg",
+      "valor": "$5.99",
+      "caracteristicas": "Deliciosas alitas de pollo fritas con salsa BBQ."
+    },
+    {
+      "nombre": "Alitas de Pollo BBQ",
+      "img": "/src/assets/4. Complementos/alitas2.jpg",
+      "valor": "$6.49",
+      "caracteristicas": "Alitas de pollo con salsa BBQ ahumada."
+    },
+    {
+      "nombre": "Bistec Combinado",
+      "img": "/src/assets/4. Complementos/bistec.jpg",
+      "valor": "$12.99",
+      "caracteristicas": "Bistec jugoso acompañado de papas fritas y ensalada."
+    },
+    {
+      "nombre": "Bowl de Patatas",
+      "img": "/src/assets/4. Complementos/bowl.jpg",
+      "valor": "$4.99",
+      "caracteristicas": "Papas fritas crujientes con salsa especial."
+    },
+    {
+      "nombre": "Empanadillas",
+      "img": "/src/assets/4. Complementos/empanadillas.jpg",
+      "valor": "$5.49",
+      "caracteristicas": "Empanadillas de carne y verduras recién horneadas."
+    },
+    {
+      "nombre": "Palitos de Queso",
+      "img": "/src/assets/4. Complementos/queso.jpg",
+      "valor": "$4.49",
+      "caracteristicas": "Palitos de queso rebozados y fritos hasta dorar."
+    },
+    {
+      "nombre": "Pinchos Morunos",
+      "img": "/src/assets/4. Complementos/pinchos.jpg",
+      "valor": "$7.99",
+      "caracteristicas": "Sabrosos pichos morunos marinados y a la parrilla."
+    },
+    {
+      "nombre": "Pollo Broster",
+      "img": "/src/assets/4. Complementos/pollo.jpg",
+      "valor": "$8.49",
+      "caracteristicas": "Crujiente pollo broster servido con salsa especial."
+    },
+    {
+      "nombre": "Tabla Flamenca",
+      "img": "/src/assets/4. Complementos/tabla.jpg",
+      "valor": "$14.99",
+      "caracteristicas": "Selección de embutidos, quesos y acompañamientos."
+    }
+  ],
+  "bebidas": [
+    {
+      "nombre": "CocaCola",
+      "img": "/src/assets/5. Bebidas/cocaCola.png",
+      "valor": "$1.99",
+      "caracteristicas": "Refresco clásico con sabor inconfundible."
+    },
+    {
+      "nombre": "Fanta",
+      "img": "/src/assets/5. Bebidas/fanta.png",
+      "valor": "$1.89",
+      "caracteristicas": "Refresco de naranja refrescante y burbujeante."
+    },
+    {
+      "nombre": "Pepsi",
+      "img": "/src/assets/5. Bebidas/pepsi.png",
+      "valor": "$1.99",
+      "caracteristicas": "Refresco con un sabor audaz y refrescante."
+    },
+    {
+      "nombre": "Guarana",
+      "img": "/src/assets/5. Bebidas/guarana.png",
+      "valor": "$2.09",
+      "caracteristicas": "Refresco brasileño hecho con guaraná natural."
+    },
+    {
+      "nombre": "Cerveza Club",
+      "img": "/src/assets/5. Bebidas/cervezaClub.png",
+      "valor": "$2.49",
+      "caracteristicas": "Cerveza rubia clara, refrescante y balanceada."
+    },
+    {
+      "nombre": "Cerveza Guinness",
+      "img": "/src/assets/5. Bebidas/cervezaGuinness.png",
+      "valor": "$3.49",
+      "caracteristicas": "Cerveza negra con cuerpo y sabor intenso."
+    },
+    {
+      "nombre": "Cerveza Heineken",
+      "img": "/src/assets/5. Bebidas/cervezaHeineken.png",
+      "valor": "$2.99",
+      "caracteristicas": "Cerveza rubia premium holandesa."
+    },
+    {
+      "nombre": "Agua Mineral",
+      "img": "/src/assets/5. Bebidas/aguaMineral.png",
+      "valor": "$1.29",
+      "caracteristicas": "Agua mineral natural, pura y refrescante."
+    },
+    {
+      "nombre": "Zumo de Frutas",
+      "img": "/src/assets/5. Bebidas/zumoDeFrutas.png",
+      "valor": "$2.29",
+      "caracteristicas": "Zumo natural de frutas tropicales."
+    },
+    {
+      "nombre": "Zumos Verdes",
+      "img": "/src/assets/5. Bebidas/zumosVerdes.png",
+      "valor": "$3.49",
+      "caracteristicas": "Zumo detox con frutas y verduras frescas."
+    }
+  ]
+}
