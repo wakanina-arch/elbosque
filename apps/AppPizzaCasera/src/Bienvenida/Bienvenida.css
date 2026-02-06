@@ -4,9 +4,25 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
   background: #2a2301;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../assets/1. Bienvenida/inicio.JPG");
+  background-size: contain;
+  background-position: center;
+  background-image: url("../assets/1. Bienvenida/Pizza Casera.jpg");
   font-family: 'Amatic SC', cursive;
+}
+.bienvenida-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  /* Ajusta la opacidad */
+  z-index: 0;
+}
+
+.bienvenida-container>* {
+  position: relative;
+  z-index: 1;
 }
