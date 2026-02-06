@@ -117,12 +117,32 @@ function AppRouter() {
       }}>
         {componenteActual}
         {idPantalla !== "bienvenida" && (
-          <div style={{ display: "flex", justifyContent: "center", margin: "2rem" }}>
+          <div style={{ display: "flex", justifyContent: "center", margin: "2rem", gap: "1rem" }}>
             {indice > 0 && (
-              <button onClick={anterior} style={{ marginRight: "1rem" }}>Anterior</button>
+              <button onClick={anterior} style={{
+                padding: "10px 20px",
+                backgroundColor: "#128343",
+                color: "#fff",
+                border: "none",
+                borderRadius: "6px",
+                fontSize: "1rem",
+                fontWeight: 600,
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+              }} onMouseOver={(e) => e.target.style.backgroundColor = "#0d6b35"} onMouseOut={(e) => e.target.style.backgroundColor = "#128343"}>Anterior</button>
             )}
             {indice < pantallas.length - 1 && (
-              <button onClick={siguiente}>Siguiente</button>
+              <button onClick={siguiente} style={{
+                padding: "10px 20px",
+                backgroundColor: "#128343",
+                color: "#fff",
+                border: "none",
+                borderRadius: "6px",
+                fontSize: "1rem",
+                fontWeight: 600,
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+              }} onMouseOver={(e) => e.target.style.backgroundColor = "#0d6b35"} onMouseOut={(e) => e.target.style.backgroundColor = "#128343"}>Siguiente</button>
             )}
           </div>
         )}
