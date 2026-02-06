@@ -98,29 +98,45 @@ function AppRouter() {
 
   return (
     <div style={{
-      height: 'calc(100vh - 65px)',
+      height: '100vh',
       position: 'relative',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
       paddingBottom: 0,
     }}>
+      {/* Contenedor de contenido - toma todo menos la navbar */}
       <div style={{
         flex: 1,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
+        overflow: 'auto',
+        paddingBottom: '80px',
       }}>
-        {componenteActual}
+        <div style={{
+          flex: 1,
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          {componenteActual}
+        </div>
+        
+        {/* Botones de navegación */}
         {idPantalla !== "bienvenida" && (
-          <div style={{ display: "flex", justifyContent: "center", margin: "2rem", gap: "1rem" }}>
+          <div style={{ 
+            display: "flex", 
+            justifyContent: "center", 
+            alignItems: "center",
+            gap: "1rem",
+            padding: "1.5rem",
+            width: '100%',
+          }}>
             {indice > 0 && (
               <button onClick={anterior} style={{
-                padding: "10px 20px",
+                padding: "10px 24px",
                 backgroundColor: "#128343",
                 color: "#fff",
                 border: "none",
@@ -133,7 +149,7 @@ function AppRouter() {
             )}
             {indice < pantallas.length - 1 && (
               <button onClick={siguiente} style={{
-                padding: "10px 20px",
+                padding: "10px 24px",
                 backgroundColor: "#128343",
                 color: "#fff",
                 border: "none",
@@ -147,6 +163,7 @@ function AppRouter() {
           </div>
         )}
       </div>
+
       {/* Barra de navegación inferior */}
       <PerfilModal
         open={perfilAbierto}
