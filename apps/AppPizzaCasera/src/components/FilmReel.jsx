@@ -2,8 +2,8 @@ import React from 'react';
 import './FilmReel.css';
 
 /**
- * FilmReel - Contenedor tipo carrete de película
- * Ideal para mostrar productos de forma visual y atractiva
+ * FilmReel - Carrete de película fotográfica auténtico
+ * Diseño realista inspirado en carretes de cine de 35mm
  * 
  * Props:
  * - imagen: URL de la imagen a mostrar
@@ -21,6 +21,10 @@ export default function FilmReel({
   onClick, 
   isSelected = false 
 }) {
+  // Generar agujeros de perforación (sprocket holes)
+  const holesCount = 7;
+  const holes = Array.from({ length: holesCount }, (_, i) => i);
+
   return (
     <div 
       className={`film-reel ${isSelected ? 'selected' : ''}`}
@@ -29,16 +33,14 @@ export default function FilmReel({
       tabIndex={0}
       onKeyPress={(e) => e.key === 'Enter' && onClick?.()}
     >
-      {/* Agujeros superiores - carrete de película */}
+      {/* Agujeros superiores - Sprocket holes */}
       <div className="film-reel-holes-top">
-        <span className="hole"></span>
-        <span className="hole"></span>
-        <span className="hole"></span>
-        <span className="hole"></span>
-        <span className="hole"></span>
+        {holes.map((i) => (
+          <span key={`top-${i}`} className="hole"></span>
+        ))}
       </div>
 
-      {/* Marco principal */}
+      {/* Marco principal - Carrete cilíndrico */}
       <div className="film-reel-frame">
         {/* Imagen */}
         <div className="film-reel-image-container">
@@ -57,13 +59,11 @@ export default function FilmReel({
         </div>
       </div>
 
-      {/* Agujeros inferiores - carrete de película */}
+      {/* Agujeros inferiores - Sprocket holes */}
       <div className="film-reel-holes-bottom">
-        <span className="hole"></span>
-        <span className="hole"></span>
-        <span className="hole"></span>
-        <span className="hole"></span>
-        <span className="hole"></span>
+        {holes.map((i) => (
+          <span key={`bottom-${i}`} className="hole"></span>
+        ))}
       </div>
     </div>
   );
