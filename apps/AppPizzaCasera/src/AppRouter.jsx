@@ -9,16 +9,6 @@ import Finalizacion from "./Finalizacion/Finalizacion";
 import AdminPanel from "./AdminPanel";
 import UserDataForm from "./UserDataForm";
 
-const pantallas = [
-  { id: "bienvenida", componente: <Bienvenida /> },
-  { id: "pizzas", componente: <Pizzas /> },
-  { id: "ensaladas", componente: <Ensaladas /> },
-  { id: "complementos", componente: <Complementos /> },
-  { id: "bebidas", componente: <Bebidas /> },
-  { id: "finalizacion", componente: <Finalizacion /> },
-  { id: "admin", componente: <AdminPanel /> },
-];
-
 function AppRouter() {
   const [indice, setIndice] = useState(0);
   const [carrito, setCarrito] = useState([]);
@@ -32,62 +22,35 @@ function AppRouter() {
     return saved ? JSON.parse(saved) : null;
   });
 
-  const siguiente = () => {
-    if (indice < pantallas.length - 1) setIndice(indice + 1);
-  };
-  const anterior = () => {
-    if (indice > 0) setIndice(indice - 1);
-  };
-
-  // Renderizar cada pantalla pasando las props necesarias
-  let componenteActual = null;
-  const idPantalla = pantallas[indice].id;
-  if (showUserForm) {
-    componenteActual = <UserDataForm onSave={datos => {
-      setShowUserForm(false);
-      setUserData(datos);
-    }} />;
-  } else if (idPantalla === "bienvenida") {
-    componenteActual = <Bienvenida siguiente={siguiente} />;
-  } else if (idPantalla === "pizzas") {
-    componenteActual = <Pizzas agregarAlCarrito={producto => setCarrito([...carrito, producto])} />;
-  } else if (idPantalla === "ensaladas") {
-    componenteActual = <Ensaladas agregarAlCarrito={producto => setCarrito([...carrito, producto])} />;
-  } else if (idPantalla === "finalizacion") {
-    componenteActual = <Finalizacion carrito={carrito} />;
-  } else {
-    componenteActual = pantallas[indice].componente;
-  }
-
-  // Barra de navegación inferior
-  const navItems = [
-    { id: "bienvenida", label: "Inicio", icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 11.5L12 4l9 7.5" stroke="#128343" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 10.5V20a1 1 0 001 1h3.5a1 1 0 001-1v-4h2v4a1 1 0 001 1H18a1 1 0 001-1v-9.5" stroke="#128343" strokeWidth="2" strokeLinecap="round"/></svg>
-    ) },
-    { id: "pizzas", label: "Buscar", icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#128343" strokeWidth="2"/><path d="M21 21l-4.35-4.35" stroke="#128343" strokeWidth="2" strokeLinecap="round"/></svg>
-    ) },
-    { id: "finalizacion", label: "Carrito", icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 6h15l-1.5 9h-13z" stroke="#128343" strokeWidth="2" strokeLinejoin="round"/><circle cx="9" cy="21" r="1" fill="#128343"/><circle cx="18" cy="21" r="1" fill="#128343"/></svg>
-    ) },
-    { id: "admin", label: "Perfil", icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#128343" strokeWidth="2"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7" stroke="#128343" strokeWidth="2"/></svg>
-    ) },
+  const pantallas = [
+    { id: "bienvenida", componente: <Bienvenida siguiente={() => setIndice(1)} /> },
+    { id: "pizzas", componente: <Pizzas agregarAlCarrito={producto => setCarrito([...carrito, producto])} /> },
+    { id: "ensaladas", componente: <Ensaladas agregarAlCarrito={producto => setCarrito([...carrito, producto])} /> },
+    { id: "complementos", componente: <Complementos agregarAlCarrito={producto => setCarrito([...carrito, producto])} /> },
+    { id: "bebidas", componente: <Bebidas agregarAlCarrito={producto => setCarrito([...carrito, producto])} /> },
+    { id: "finalizacion", componente: <Finalizacion carrito={carrito} /> },
+    { id: "admin", componente: <AdminPanel /> },
   ];
 
-  const goToPantalla = (pantallaId) => {
-    if (pantallaId === "admin") {
-      setPerfilAbierto(true);
-      return;
-    }
-    const idx = pantallas.findIndex(p => p.id === pantallaId);
-    if (idx !== -1) setIndice(idx);
-  };
+  let pantalla = null;
+  if (showUserForm) {
+    pantalla = (
+      <UserDataForm 
+        onSave={(datos) => {
+          setShowUserForm(false);
+          setUserData(datos);
+        }} 
+      />
+    );
+  } else {
+    pantalla = pantallas[indice].componente;
+  }
 
   const handlePerfilEdit = (datos) => {
     setUserData(datos);
     localStorage.setItem("userData", JSON.stringify(datos));
   };
+
   const handlePerfilLogout = () => {
     localStorage.removeItem("userData");
     setUserData(null);
@@ -97,74 +60,88 @@ function AppRouter() {
   };
 
   return (
-    <div style={{
-      height: '100vh',
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      paddingBottom: 0,
-    }}>
-      {/* Contenedor de contenido - toma todo menos la navbar */}
-      <div style={{
-        flex: 1,
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'auto',
-        paddingBottom: '80px',
-      }}>
-        <div style={{
-          flex: 1,
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          {componenteActual}
-        </div>
-        
-        {/* Botones de navegación */}
-        {idPantalla !== "bienvenida" && (
-          <div style={{ 
-            display: "flex", 
-            justifyContent: "center", 
-            alignItems: "center",
-            gap: "1rem",
-            padding: "1.5rem",
-            width: '100%',
-          }}>
-            {indice > 0 && (
-              <button onClick={anterior} style={{
-                padding: "10px 24px",
-                backgroundColor: "#128343",
-                color: "#fff",
-                border: "none",
-                borderRadius: "6px",
-                fontSize: "1rem",
-                fontWeight: 600,
-                cursor: "pointer",
-                transition: "all 0.2s ease",
-              }} onMouseOver={(e) => e.target.style.backgroundColor = "#0d6b35"} onMouseOut={(e) => e.target.style.backgroundColor = "#128343"}>Anterior</button>
-            )}
-            {indice < pantallas.length - 1 && (
-              <button onClick={siguiente} style={{
-                padding: "10px 24px",
-                backgroundColor: "#128343",
-                color: "#fff",
-                border: "none",
-                borderRadius: "6px",
-                fontSize: "1rem",
-                fontWeight: 600,
-                cursor: "pointer",
-                transition: "all 0.2s ease",
-              }} onMouseOver={(e) => e.target.style.backgroundColor = "#0d6b35"} onMouseOut={(e) => e.target.style.backgroundColor = "#128343"}>Siguiente</button>
-            )}
-          </div>
-        )}
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh", width: "100vw" }}>
+      {/* Contenido principal */}
+      <div style={{ flex: 1, overflowY: "auto", paddingBottom: "80px" }}>
+        {pantalla}
       </div>
 
+      {/* Botones de navegación */}
+      {!showUserForm && indice > 0 && (
+        <button
+          onClick={() => setIndice(indice - 1)}
+          style={{
+            position: "fixed",
+            bottom: "80px",
+            left: "20px",
+            padding: "12px 24px",
+            backgroundColor: "#128343",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "1rem",
+            fontWeight: "600",
+            cursor: "pointer",
+            zIndex: 50,
+          }}
+        >
+          ← Anterior
+        </button>
+      )}
+
+      {!showUserForm && indice < pantallas.length - 1 && (
+        <button
+          onClick={() => setIndice(indice + 1)}
+          style={{
+            position: "fixed",
+            bottom: "80px",
+            right: "20px",
+            padding: "12px 24px",
+            backgroundColor: "#128343",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "1rem",
+            fontWeight: "600",
+            cursor: "pointer",
+            zIndex: 50,
+          }}
+        >
+          Siguiente →
+        </button>
+      )}
+
       {/* Barra de navegación inferior */}
+      <nav
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "62px",
+          background: "#fffdfa",
+          borderTop: "1.5px solid #e6e0d0",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "40px",
+          zIndex: 100,
+        }}
+      >
+        <button onClick={() => setIndice(0)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", fontSize: "13px", color: indice === 0 ? "#128343" : "#888", fontWeight: indice === 0 ? "700" : "500" }}>
+          🏠 Inicio
+        </button>
+        <button onClick={() => setIndice(1)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", fontSize: "13px", color: indice === 1 ? "#128343" : "#888", fontWeight: indice === 1 ? "700" : "500" }}>
+          🔍 Buscar
+        </button>
+        <button onClick={() => setIndice(5)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", fontSize: "13px", color: indice === 5 ? "#128343" : "#888", fontWeight: indice === 5 ? "700" : "500" }}>
+          🛒 Carrito
+        </button>
+        <button onClick={() => setPerfilAbierto(true)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", fontSize: "13px", color: "#888", fontWeight: "500" }}>
+          👤 Perfil
+        </button>
+      </nav>
+
       <PerfilModal
         open={perfilAbierto}
         onClose={() => setPerfilAbierto(false)}
@@ -172,55 +149,6 @@ function AppRouter() {
         onLogout={handlePerfilLogout}
         userData={userData}
       />
-      <nav style={{
-        position: 'fixed',
-        left: 0,
-        right: 0,
-        bottom: 0,
-        height: 62,
-        background: '#fffdfa',
-        borderTop: '1.5px solid #e6e0d0',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 100,
-        boxShadow: '0 -2px 12px #0001',
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: 38,
-          width: '100%',
-          maxWidth: 420,
-        }}>
-          {navItems.map(item => (
-            <button
-              key={item.id}
-              onClick={() => goToPantalla(item.id)}
-              style={{
-                background: 'none',
-                border: 'none',
-                outline: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                color: indice === pantallas.findIndex(p => p.id === item.id) ? '#128343' : '#888',
-                fontWeight: indice === pantallas.findIndex(p => p.id === item.id) ? 700 : 500,
-                fontSize: 13,
-                cursor: 'pointer',
-                padding: 0,
-                transition: 'color 0.2s',
-                minWidth: 60,
-              }}
-              aria-label={item.label}
-            >
-              {item.icon}
-              <span style={{ marginTop: 2 }}>{item.label}</span>
-            </button>
-          ))}
-        </div>
-      </nav>
     </div>
   );
 }
