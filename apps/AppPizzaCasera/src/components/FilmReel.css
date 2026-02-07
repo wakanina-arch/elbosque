@@ -2,24 +2,26 @@
 /* Carrete de película fotográfica auténtico con diseño 3D */
 
 .film-reel {
-  width: 100%;
-  max-width: 280px;
+  width: 120%;
+  max-width: 300px;
+  margin: 0 12px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   user-select: none;
   perspective: 1000px;
+  transform: rotateZ(-90deg);
 }
 
 .film-reel:hover {
-  transform: scale(1.05) translateY(-4px) rotateX(2deg);
+  transform: rotateZ(-90deg) scale(1.05) translateY(-4px) rotateX(2deg);
 }
 
 .film-reel.selected {
-  transform: scale(1.08) rotateX(1deg);
+  transform: rotateZ(-90deg) scale(1.08) rotateX(1deg);
 }
 
 .film-reel:active {
-  transform: scale(0.98) rotateX(0deg);
+  transform: rotateZ(-90deg) scale(0.98) rotateX(0deg);
 }
 
 /* ===== AGUJEROS SUPERIORES (SPROCKET HOLES) ===== */
@@ -100,11 +102,12 @@
   border-left: 2px solid #2a2a2a;
   border-right: 3px solid #0a0a0a;
   border-bottom: 3px solid #0a0a0a;
-  padding: 16px;
+  padding: 100px 155px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: center;
+  justify-content: space-around;
   box-shadow: 
     0 12px 32px rgba(0, 0, 0, 0.8),
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
@@ -155,8 +158,10 @@
 
 /* ===== CONTENEDOR DE IMAGEN ===== */
 .film-reel-image-container {
-  width: 100%;
-  aspect-ratio: 1;
+  width: 240px;
+  height: 240px;
+  flex-shrink: 0;
+  transform: translateY(-80px);
   border-radius: 8px;
   overflow: hidden;
   background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
@@ -207,26 +212,29 @@
   transition: transform 0.3s ease-out;
   position: relative;
   z-index: 2;
+  transform: rotateZ(90deg);
 }
 
 .film-reel:hover .film-reel-image {
-  transform: scale(1.08);
+  transform: scale(1.08) rotateZ(90deg);
 }
 
 .film-reel.selected .film-reel-image {
-  transform: scale(1.05);
+  transform: scale(1.05) rotateZ(90deg);
 }
 
 /* ===== INFO ===== */
 .film-reel-info {
-  width: 100%;
+  flex: 1;
   text-align: center;
   color: #fff;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  justify-content: center;
   position: relative;
   z-index: 3;
+  transform: rotateZ(90deg);
 }
 
 .film-reel-title {
@@ -298,48 +306,18 @@
     inset 0 -2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 640px) {
-  .film-reel {
-    max-width: 100%;
-  }
-
-  .film-reel-title {
-    font-size: 1rem;
-  }
-
-  .film-reel-price {
-    font-size: 1.2rem;
-  }
-
-  .film-reel-frame {
-    padding: 12px;
-    gap: 10px;
-  }
-
-  .hole {
-    width: 8px;
-    height: 8px;
-  }
-
-  .film-reel-holes-top,
-  .film-reel-holes-bottom {
-    height: 20px;
-  }
-}
-
 /* ===== ANIMACIÓN ENTRANCE ===== */
 @keyframes filmReelPop {
   0% {
     opacity: 0;
-    transform: scale(0.8) translateY(20px);
+    transform: scale(0.8) translateY(20px) rotateZ(-90deg);
   }
   50% {
     opacity: 1;
   }
   100% {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0) rotateZ(-90deg);
   }
 }
 

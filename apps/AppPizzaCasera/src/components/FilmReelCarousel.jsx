@@ -16,8 +16,8 @@ export default function FilmReelCarousel({ children }) {
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
+    setStartX(e.pageY - scrollContainerRef.current.offsetTop);
+    setScrollLeft(scrollContainerRef.current.scrollTop);
   };
 
   const handleMouseLeave = () => {
@@ -31,9 +31,9 @@ export default function FilmReelCarousel({ children }) {
   const handleMouseMove = (e) => {
     if (!isDragging) return;
     e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+    const y = e.pageY - scrollContainerRef.current.offsetTop;
+    const walk = (y - startX) * 1.5;
+    scrollContainerRef.current.scrollTop = scrollLeft - walk;
   };
 
   return (

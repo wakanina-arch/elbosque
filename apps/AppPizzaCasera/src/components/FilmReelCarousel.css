@@ -12,13 +12,14 @@
 
 .film-reel-carousel {
   display: flex;
-  gap: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
+  flex-direction: column;
+  gap: 31px;
+  overflow-x: visible;
+  overflow-y: auto;
   scroll-behavior: smooth;
-  padding: 0 16px;
+  padding: 80px 200px;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: y mandatory;
   
   /* Ocultar scrollbar */
   -ms-overflow-style: none;
@@ -31,10 +32,10 @@
 
 .film-reel-carousel > * {
   flex: 0 0 auto;
-  min-width: 280px;
+  min-height: 280px;
   scroll-snap-align: start;
   margin: 0;
-  border-right: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
 }
 
 /* ===== BOTONES DE NAVEGACIÓN ===== */
@@ -84,11 +85,11 @@
 @keyframes carouselSlideIn {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -119,13 +120,8 @@
     right: 4px;
   }
 
-  .film-reel-carousel {
-    gap: 16px;
-    padding: 0 12px;
-  }
-
   .film-reel-carousel > * {
-    min-width: 200px;
+    min-height: 200px;
   }
 }
 
@@ -136,13 +132,8 @@
     font-size: 18px;
   }
 
-  .film-reel-carousel {
-    gap: 12px;
-    padding: 0 8px;
-  }
-
   .film-reel-carousel > * {
-    min-width: 160px;
+    min-height: 160px;
   }
 }
 
