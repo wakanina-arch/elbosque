@@ -1,6 +1,6 @@
 {
-  "short_name": "Pizza Casera",
-  "name": "Pizza Casera",
+  "short_name": "El Bosque",
+  "name": "El Bosque",
   "icons": [
     {
       "src": "/icon-192.png",
@@ -15,7 +15,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#d32f2f",
-  "description": "Pide tu pizza casera favorita a domicilio desde tu móvil o tablet."
+  "background_color": "#011c01",
+  "theme_color": "#011c01",
+  "description": "El Bosque - Plataforma de compra con varios comercios locales"
 }

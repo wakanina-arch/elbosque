@@ -67,15 +67,17 @@ function AppRouter() {
   ];
 
   return (
-    <div className="app-router-container">
-      <div className="app-router-content">
+    <div className="app-router-container" role="application" aria-label="El Bosque - Aplicación de compra">
+      <main className="app-router-content" role="main">
         {pantalla}
-      </div>
+      </main>
 
       {!showUserForm && indice > 0 && (
         <button
           onClick={() => setIndice(indice - 1)}
           className="app-router-nav-btn app-router-nav-btn-prev"
+          aria-label="Ir a la pantalla anterior"
+          title="Pantalla anterior"
         >
           ← Anterior
         </button>
@@ -85,20 +87,25 @@ function AppRouter() {
         <button
           onClick={() => setIndice(indice + 1)}
           className="app-router-nav-btn app-router-nav-btn-next"
+          aria-label="Ir a la próxima pantalla"
+          title="Próxima pantalla"
         >
           Siguiente →
         </button>
       )}
 
-      <nav className="app-router-navbar">
+      <nav className="app-router-navbar" role="navigation" aria-label="Menú principal">
         {navItems.map((item) => (
           <button
             key={item.label}
             onClick={() => item.index !== null ? setIndice(item.index) : setPerfilAbierto(true)}
             className={`app-router-navbar-btn ${item.index === indice ? 'active' : ''}`}
+            aria-current={item.index === indice ? "page" : undefined}
+            aria-label={item.label}
+            title={item.label}
           >
-            <span className="app-router-navbar-emoji">{item.emoji}</span>
-            {item.label}
+            <span className="app-router-navbar-emoji" aria-hidden="true">{item.emoji}</span>
+            <span>{item.label}</span>
           </button>
         ))}
       </nav>

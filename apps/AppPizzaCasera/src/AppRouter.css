@@ -1,15 +1,19 @@
 .app-router-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100%;
+  max-width: 100vw;
   background: #011c01;
+  overflow: hidden;
 }
 
 .app-router-content {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-bottom: 80px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .app-router-nav-btn {
@@ -20,29 +24,35 @@
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
   z-index: 50;
   transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .app-router-nav-btn:hover {
   background-color: #0d5c35;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(18, 131, 67, 0.2);
+  box-shadow: 0 4px 12px rgba(18, 131, 67, 0.3);
 }
 
 .app-router-nav-btn:active {
   transform: translateY(0);
 }
 
+.app-router-nav-btn:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
 .app-router-nav-btn-prev {
-  left: 20px;
+  left: 12px;
 }
 
 .app-router-nav-btn-next {
-  right: 20px;
+  right: 12px;
 }
 
 .app-router-navbar {
@@ -52,12 +62,13 @@
   right: 0;
   height: 62px;
   background: #fff;
-  border-top: 1px solid #e0e0e0;
+  border-top: 2px solid #e0e0e0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   z-index: 100;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  safe-area-inset-bottom: 0;
 }
 
 .app-router-navbar-btn {
@@ -67,24 +78,82 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 4px;
-  font-size: 13px;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #888;
   transition: all 0.2s;
-  padding: 8px 0;
+  padding: 8px 12px;
   flex: 1;
+  height: 100%;
 }
 
 .app-router-navbar-btn:hover {
   color: #128343;
+  background-color: rgba(18, 131, 67, 0.05);
+}
+
+.app-router-navbar-btn:focus {
+  outline: 2px solid #128343;
+  outline-offset: -2px;
 }
 
 .app-router-navbar-btn.active {
   color: #128343;
   font-weight: 700;
+  border-top: 3px solid #128343;
 }
 
 .app-router-navbar-emoji {
   font-size: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-router-nav-btn {
+    font-size: 0.75rem;
+    padding: 10px 16px;
+    bottom: 70px;
+  }
+
+  .app-router-navbar {
+    height: 62px;
+  }
+
+  .app-router-navbar-btn {
+    font-size: 0.65rem;
+    gap: 2px;
+    padding: 6px 8px;
+  }
+
+  .app-router-navbar-emoji {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-router-nav-btn {
+    font-size: 0.65rem;
+    padding: 8px 12px;
+    bottom: 65px;
+  }
+
+  .app-router-navbar {
+    height: 60px;
+  }
+
+  .app-router-navbar-btn {
+    font-size: 0.6rem;
+    gap: 1px;
+    padding: 4px 6px;
+  }
+
+  .app-router-navbar-emoji {
+    font-size: 18px;
+  }
+
+  .app-router-content {
+    padding-bottom: 70px;
+  }
 }
