@@ -66,17 +66,6 @@ export default function FilmReelCarousel({ children }) {
 
   return (
     <div className="film-reel-carousel-container">
-      {/* Botón Izquierda */}
-      {canScrollLeft && (
-        <button
-          className="carousel-nav carousel-nav-left"
-          onClick={() => scroll('left')}
-          aria-label="Scroll izquierda"
-        >
-          ←
-        </button>
-      )}
-
       {/* Contenedor de Scroll */}
       <div
         ref={scrollContainerRef}
@@ -89,17 +78,6 @@ export default function FilmReelCarousel({ children }) {
       >
         {children}
       </div>
-
-      {/* Botón Derecha */}
-      {canScrollRight && (
-        <button
-          className="carousel-nav carousel-nav-right"
-          onClick={() => scroll('right')}
-          aria-label="Scroll derecha"
-        >
-          →
-        </button>
-      )}
     </div>
   );
 }

@@ -3,12 +3,16 @@
 .film-reel-carousel-container {
   position: relative;
   width: 100%;
-  margin: 24px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
 }
 
 .film-reel-carousel {
   display: flex;
-  gap: 24px;
+  gap: 0;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -29,6 +33,8 @@
   flex: 0 0 auto;
   min-width: 280px;
   scroll-snap-align: start;
+  margin: 0;
+  border-right: 1px solid #1a1a1a;
 }
 
 /* ===== BOTONES DE NAVEGACIÓN ===== */

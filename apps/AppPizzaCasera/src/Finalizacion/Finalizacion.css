@@ -61,6 +61,8 @@
     max-width: 800px;
     padding: 1rem 1rem 0.5rem 1rem;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
 }
 
 .finalizacion-inferior {
@@ -68,6 +70,8 @@
     max-width: 800px;
     padding: 0.5rem 1rem 1rem 1rem;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 600px) {
@@ -85,6 +89,8 @@
     display: grid;
     grid-template-columns: auto;
     gap: 0;
+    justify-items: center;
+    margin: 0 auto;
 }
 
 hr {
