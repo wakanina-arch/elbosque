@@ -1,6 +1,6 @@
 {
-  "short_name": "El Bosque",
-  "name": "El Bosque",
+  "short_name": "elbosco",
+  "name": "elbosco",
   "icons": [
     {
       "src": "/icon-192.png",
@@ -17,5 +17,5 @@
   "display": "standalone",
   "background_color": "#011c01",
   "theme_color": "#011c01",
-  "description": "El Bosque - Plataforma de compra con varios comercios locales"
+  "description": "elbosco - Plataforma de servicos locales a traves de una app movil. Encuentra y reserva servicios locales de manera rapida y sencilla."
 }

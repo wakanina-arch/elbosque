@@ -91,6 +91,30 @@
       "img": "imagenes/3. Ensaladas/Ensalada Tabulé.jpg",
       "valor": "$7.39",
       "caracteristicas": "Cuscús, tomate, pepino, perejil y limón."
+    },
+    {
+      "nombre": "Alemana de Patata",
+      "img": "imagenes/3. Ensaladas/Ensalada Alemana de Patata.jpg",
+      "valor": "$7.89",
+      "caracteristicas": "Patatas, tocino, huevo, cebolla y vinagre."
+    },
+    {
+      "nombre": "Mimosa",
+      "img": "imagenes/3. Ensaladas/Ensalada Mimosa.jpg",
+      "valor": "$8.29",
+      "caracteristicas": "Lechuga, jamón, queso, huevo duro y verduras."
+    },
+    {
+      "nombre": "Nizarda",
+      "img": "imagenes/3. Ensaladas/Ensalada Nizarda.jpg",
+      "valor": "$8.99",
+      "caracteristicas": "Atún, patata, tomate, huevo duro y judías verdes."
+    },
+    {
+      "nombre": "Waldorf",
+      "img": "imagenes/3. Ensaladas/Ensalada Waldorf.jpg",
+      "valor": "$8.49",
+      "caracteristicas": "Manzana, apio, nueces, uvas y mayonesa."
     }
   ],
   "complementos": [
@@ -147,6 +171,18 @@
       "img": "imagenes/4. Complementos/Tabla flamenca.png",
       "valor": "$14.99",
       "caracteristicas": "Selección de embutidos, quesos y acompañamientos."
+    },
+    {
+      "nombre": "Pincho de Verduras",
+      "img": "imagenes/4. Complementos/Pincho de verduras.png",
+      "valor": "$4.99",
+      "caracteristicas": "Pincho con selección de verduras frescas y asadas."
+    },
+    {
+      "nombre": "Combos",
+      "img": "imagenes/4. Complementos/Combos.png",
+      "valor": "$15.99",
+      "caracteristicas": "Combo especial con selección variada de complementos."
     }
   ],
   "bebidas": [
