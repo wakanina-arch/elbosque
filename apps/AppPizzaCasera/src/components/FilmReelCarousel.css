@@ -5,8 +5,8 @@
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
   min-height: 60vh;
 }
 
@@ -21,7 +21,8 @@
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: y mandatory;
   width: 100%;
-  max-width: 100%;
+  max-width: none;
+  box-sizing: border-box;
   
   /* Ocultar scrollbar */
   -ms-overflow-style: none;
