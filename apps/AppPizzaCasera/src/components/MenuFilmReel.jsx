@@ -92,19 +92,31 @@ export default function MenuFilmReel({ items, titulo }) {
 
                 <div className="menu-film-tamaño">
                   <label>Tamaño:</label>
-                  <div className="tamaño-opciones">
-                    <button
-                      className={'tamaño-btn' + (tamano === 'grande' ? ' activo' : '')}
-                      onClick={() => setTamano('grande')}
-                    >
-                      Grande
-                    </button>
-                    <button
-                      className={'tamaño-btn' + (tamano === 'mediana' ? ' activo' : '')}
-                      onClick={() => setTamano('mediana')}
-                    >
-                      Mediana (-$2)
-                    </button>
+                  <div className="tamaño-lista">
+                    <label className="tamaño-item">
+                      <input 
+                        type="radio" 
+                        name="tamano" 
+                        value="grande"
+                        checked={tamano === 'grande'}
+                        onChange={() => setTamano('grande')}
+                      />
+                      <span className="tamaño-label">Grande</span>
+                      <span className="tamaño-precio">{items[seleccionada].valor}</span>
+                      <span className="tamaño-check">🛟</span>
+                    </label>
+                    <label className="tamaño-item">
+                      <input 
+                        type="radio" 
+                        name="tamano" 
+                        value="mediana"
+                        checked={tamano === 'mediana'}
+                        onChange={() => setTamano('mediana')}
+                      />
+                      <span className="tamaño-label">Mediana</span>
+                      <span className="tamaño-precio">${restarDolares(items[seleccionada].valor, 2).replace('$', '')}</span>
+                      <span className="tamaño-check">🛟</span>
+                    </label>
                   </div>
                 </div>
 
