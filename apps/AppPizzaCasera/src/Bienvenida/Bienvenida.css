@@ -25,6 +25,7 @@
   width: 90%;
   padding: 0;
   height: 100%;
+  margin: 0 auto;
   animation: fadeInUp 1s ease-out;
   box-sizing: border-box;
 }
@@ -42,7 +43,7 @@
 
 .bienvenida-imagen {
   max-width: 90%;
-  max-height: 30vh;
+  max-height: 33vh;
   width: auto;
   height: auto;
   object-fit: contain;
