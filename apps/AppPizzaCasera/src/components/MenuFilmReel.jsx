@@ -94,6 +94,7 @@ export default function MenuFilmReel({ items, titulo }) {
                   <label>Tamaño:</label>
                   <div className="tamaño-lista">
                     <label className="tamaño-item">
+                      <span className="tamaño-label">Grande</span>
                       <input 
                         type="radio" 
                         name="tamano" 
@@ -101,11 +102,9 @@ export default function MenuFilmReel({ items, titulo }) {
                         checked={tamano === 'grande'}
                         onChange={() => setTamano('grande')}
                       />
-                      <span className="tamaño-label">Grande</span>
-                      <span className="tamaño-precio">{items[seleccionada].valor}</span>
-                      <span className="tamaño-check">🛟</span>
                     </label>
                     <label className="tamaño-item">
+                      <span className="tamaño-label">Mediana -$2</span>
                       <input 
                         type="radio" 
                         name="tamano" 
@@ -113,9 +112,6 @@ export default function MenuFilmReel({ items, titulo }) {
                         checked={tamano === 'mediana'}
                         onChange={() => setTamano('mediana')}
                       />
-                      <span className="tamaño-label">Mediana</span>
-                      <span className="tamaño-precio">${restarDolares(items[seleccionada].valor, 2).replace('$', '')}</span>
-                      <span className="tamaño-check">🛟</span>
                     </label>
                   </div>
                 </div>
