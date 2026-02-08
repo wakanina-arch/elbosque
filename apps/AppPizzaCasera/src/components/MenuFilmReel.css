@@ -99,15 +99,15 @@
   z-index: 1001;
   background: white;
   border-radius: 16px;
-  padding: 1.25rem;
-  width: 90%;
-  max-width: 500px;
-  max-height: 65vh;
+  padding: 1rem;
+  width: 88%;
+  max-width: 450px;
+  max-height: 60vh;
   overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
   animation: slideUp 0.3s ease;
 }
 
@@ -169,16 +169,16 @@
 }
 
 .menu-film-modal-right h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #333;
   margin: 0;
 }
 
 .menu-film-modal-desc {
   color: #666;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .menu-film-tamaño {
@@ -224,18 +224,18 @@
 }
 
 .menu-film-precio-grande {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #128343;
 }
 
 .menu-film-agregar {
-  padding: 0.75rem 1.25rem;
+  padding: 0.6rem 1rem;
   background: linear-gradient(135deg, #128343, #0d5c35);
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
