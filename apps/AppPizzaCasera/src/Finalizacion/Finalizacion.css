@@ -60,29 +60,28 @@
 
 .finalizacion-superior {
     width: 100%;
-    max-width: 700px;
-    padding: 1rem 1rem 0.5rem 1rem;
+    max-width: 600px;
+    padding: 1rem;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .finalizacion-inferior {
     width: 100%;
-    max-width: 700px;
-    padding: 0.5rem 1rem 1rem 1rem;
+    max-width: 600px;
+    padding: 1rem;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 @media (max-width: 600px) {
     .finalizacion-superior, .finalizacion-inferior {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        max-width: 98vw;
+        padding: 0.75rem;
+        max-width: 95vw;
     }
 }
 
@@ -104,7 +103,7 @@ hr {
 /* Card styles */
 .card {
     background: #fffaeb;
-    width: 320px;
+    width: 280px;
     box-shadow: 0 187px 75px #00000003, 0 105px 63px #0000000d, 0 47px 47px #00000017, 0 12px 26px #0000001a, 0 0 #0000001a;
 }
 
