@@ -156,8 +156,9 @@
 }
 
 .menu-film-modal-image {
-  width: 100%;
+  width: 85%;
   height: auto;
+  max-height: 200px;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -200,7 +201,7 @@
 }
 
 .tamaño-btn {
-  padding: 0.6rem 0.8rem;
+  padding: 0.5rem 0.6rem;
   border: 2px solid #ddd;
   border-radius: 8px;
   background: white;
@@ -208,7 +209,7 @@
   cursor: pointer;
   font-weight: 600;
   transition: all 0.2s;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 .tamaño-btn:hover {
@@ -230,12 +231,12 @@
 }
 
 .menu-film-agregar {
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 0.8rem;
   background: linear-gradient(135deg, #128343, #0d5c35);
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
