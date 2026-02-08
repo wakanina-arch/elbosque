@@ -315,29 +315,29 @@
   }
 
   .menu-film-modal {
-    width: 95vw;
-    padding: 1rem;
+    width: 53vw;
+    padding: 0.45rem;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.45rem;
     border-radius: 12px;
-    max-height: 75vh;
+    max-height: 31vh;
   }
 
   .menu-film-modal-right h2 {
-    font-size: 1.3rem;
+    font-size: 0.75rem;
   }
 
   .menu-film-modal-desc {
-    font-size: 0.85rem;
+    font-size: 0.6rem;
   }
 
   .menu-film-precio-grande {
-    font-size: 1.4rem;
+    font-size: 0.85rem;
   }
 
   .menu-film-agregar {
-    padding: 0.875rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.65rem;
   }
 
   .menu-film-item {
